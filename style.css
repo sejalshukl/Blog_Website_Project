@@ -1,0 +1,304 @@
+/* header part */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5; /* Light background for contrast */
+}
+
+/* Basic styling for the header */
+/* header part */
+
+
+/* Basic styling for the header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007B7F; /* Teal Blue */
+    padding: 15px 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow for depth */
+    position: fixed; /* Fixes the header at the top */
+    top: 0; /* Aligns it at the top */
+    left: 0; /* Aligns it to the left */
+    right: 0; /* Aligns it to the right */
+    z-index: 1000; /* Higher z-index to ensure it stays on top */
+    transition: box-shadow 0.3s; /* Smooth shadow transition */
+}
+
+.header:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); /* Increase shadow on hover for depth */
+}
+.header a {
+    color: #FFFFFF; /* White text for links */
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold; /* Bold links for emphasis */
+    position: relative; /* To position the pseudo-element */
+    transition: color 0.3s; /* Smooth color change */
+}
+
+/* New hover effect for links */
+.header a::after {
+    content: ''; /* Creates a pseudo-element */
+    display: block; /* Makes it a block element */
+    height: 3px; /* Thickness of the underline */
+    width: 100%; /* Full width */
+    background-color: #FFD700; /* Gold color for underline */
+    position: absolute; /* Positioning */
+    left: 0; /* Aligns it to the left */
+    bottom: -5px; /* Position below the text */
+    transform: scaleX(0); /* Start with a scale of 0 */
+    transition: transform 0.3s ease; /* Smooth scale transition */
+}
+
+/* Hover effect */
+.header a:hover {
+    color: #FFD700; /* Gold color on hover for contrast */
+    text-decoration: none;
+}
+
+.header a:hover::after {
+    transform: scaleX(1); /* Scale the underline to full width on hover */
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #FFD700; /* Gold logo for accent */
+    transition: transform 0.3s; /* Smooth scaling effect for logo */
+}
+
+.logo:hover {
+    transform: scale(1.1); /* Scale logo slightly on hover */
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center; /* Center search bar items */
+}
+
+.search-bar input[type="text"] {
+    padding: 8px;
+    border: 2px solid #007B7F; /* Teal border for input */
+    border-radius: 5px;
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth border color change and shadow */
+}
+
+.search-bar input[type="text"]:focus {
+    border-color: #005e5f; /* Darker Teal on focus */
+    box-shadow: 0 0 5px rgba(0, 94, 95, 0.5); /* Subtle shadow on focus */
+}
+
+.search-bar button {
+    padding: 8px 12px;
+    background-color: #A1D9D2; /* Light Teal Blue */
+    border: none;
+    border-radius: 5px;
+    margin-left: 5px;
+    font-weight: bold; /* Bold button text */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth background change and transform */
+}
+
+.search-bar button:hover {
+    background-color: #007B7F; /* Teal Blue on hover */
+    color: #ffffff; /* White text on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+/* Make the header responsive */
+@media screen and (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu a {
+        margin: 5px 0;
+    }
+
+    .search-bar {
+        width: 100%;
+        display: flex;
+        margin-top: 10px;
+    }
+
+    .search-bar input[type="text"] {
+        flex: 1;
+    }
+}
+
+/* dashboard */
+.container {
+    padding: 20px;
+    margin-top: 40px;
+}
+
+h1 {
+    color: #333; /* Dark Gray for contrast */
+}
+
+.post, .draft {
+    background-color: #E0F6F5; /* Very Light Teal Blue */
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+    transition: transform 0.3s; /* Smooth scaling on hover */
+}
+
+.post:hover, .draft:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.post h3, .draft h3 {
+    margin: 0;
+    color: #007B7F; /* Teal Blue for headings */
+    border-bottom: 2px solid #FFD700; /* Gold underline for headings */
+    padding-bottom: 5px; /* Space below heading */
+}
+
+a {
+    text-decoration: none;
+    color: #007B7F; /* Teal Blue for links */
+    margin-right: 10px;
+    font-weight: bold; /* Bold links for emphasis */
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #FFD700; /* Gold on hover */
+}
+
+/* login */
+.container1 {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    color: #007B7F; /* Teal Blue for headings */
+}
+
+.login-container form input {
+    width: 95%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #007B7F; /* Teal border for input */
+    border-radius: 5px;
+    transition: border-color 0.3s; /* Smooth border color change */
+}
+
+.login-container form input:focus {
+    border-color: #005e5f; /* Darker Teal on focus */
+}
+
+.login-container form button {
+    padding: 10px 15px;
+    background-color: #007B7F; /* Teal Blue for button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold; /* Bold button text */
+    transition: background-color 0.3s; /* Smooth background change */
+}
+
+.login-container form button:hover {
+    background-color: #005e5f; /* Darker Teal on hover */
+}
+
+.message {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.error {
+    color: red;
+}
+
+/* sign up */
+.container2 {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.signup-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.signup-container h2 {
+    margin-bottom: 20px;
+    color: #007B7F; /* Teal Blue for headings */
+}
+
+.signup-container form input {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #007B7F; /* Teal border for input */
+    border-radius: 5px;
+    transition: border-color 0.3s; /* Smooth border color change */
+}
+
+.signup-container form input:focus {
+    border-color: #005e5f; /* Darker Teal on focus */
+}
+
+.signup-container form button {
+    padding: 10px 15px;
+    background-color: #28a745; /* Green for sign-up button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold; /* Bold button text */
+    transition: background-color 0.3s; /* Smooth background change */
+}
+
+.signup-container form button:hover {
+    background-color: #218838; /* Darker Green on hover */
+}
+
+.message {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+}
